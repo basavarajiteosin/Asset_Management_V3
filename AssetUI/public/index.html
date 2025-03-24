@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/fvg.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/fvg.svg" />
+
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="%PUBLIC_URL%/plugins/fontawesome-free/css/all.min.css?v=0.0.1" />
+
+  <!-- Select2 -->
+  <link rel="stylesheet" href="%PUBLIC_URL%/plugins/select2/css/select2.min.css?v=0.0.1" />
+
+  <link rel="stylesheet" href="%PUBLIC_URL%/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css?v=0.0.1" />
+  <link rel="stylesheet" href="%PUBLIC_URL%/plugins/datatables-responsive/css/responsive.bootstrap4.min.css?v=0.0.1" />
+  <link rel="stylesheet" href="%PUBLIC_URL%/plugins/datatables-buttons/css/buttons.bootstrap4.min.css?v=0.0.1" />
+
+  <!-- Ionicons -->
+  <link rel="stylesheet"
+    href="%PUBLIC_URL%/https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css?v=0.0.1" />
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet"
+    href="%PUBLIC_URL%/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css?v=0.0.1" />
+  <!-- iCheck -->
+  <link rel="stylesheet" href="%PUBLIC_URL%/plugins/icheck-bootstrap/icheck-bootstrap.min.css?v=0.0.1" />
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="%PUBLIC_URL%/plugins/jqvmap/jqvmap.min.css?v=0.0.1" />
+  <!-- Theme style -->
+  <link rel="stylesheet" href="%PUBLIC_URL%/dist/css/adminlte.min.css?v=0.0.1" />
+  <!-- summernote -->
+  <link rel="stylesheet" href="%PUBLIC_URL%/plugins/summernote/summernote-bs4.min.css?v=0.0.1">
+
+  <link rel="stylesheet" href="%PUBLIC_URL%/dist/css/custom.css?v=0.0.1" />
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="%PUBLIC_URL%/plugins/overlayScrollbars/css/OverlayScrollbars.min.css?v=0.0.1" />
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="%PUBLIC_URL%/plugins/daterangepicker/daterangepicker.css?v=0.0.1" />
+  <!-- summernote -->
+  <link rel="stylesheet" href="%PUBLIC_URL%/plugins/summernote/summernote-bs4.min.css?v=0.0.1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css?v=0.0.1" />
+  <title>Asset Management Tool</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+  <!-- jQuery -->
+  <script src="%PUBLIC_URL%/plugins/jquery/jquery.min.js?v=0.0.1"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="%PUBLIC_URL%/plugins/jquery-ui/jquery-ui.min.js?v=0.0.1"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge("uibutton", $.ui.button);
+  </script>
+  <!-- Bootstrap 4 -->
+  <script src="%PUBLIC_URL%/plugins/bootstrap/js/bootstrap.bundle.min.js?v=0.0.1"></script>
+  <!-- Select2 -->
+  <script src="%PUBLIC_URL%/plugins/select2/js/select2.full.min.js?v=0.0.1"></script>
+  <!-- DataTables  & Plugins -->
+  <script src="%PUBLIC_URL%/plugins/datatables/jquery.dataTables.min.js?v=0.0.1"></script>
+  <script src="%PUBLIC_URL%/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js?v=0.0.1"></script>
+  <script src="%PUBLIC_URL%/plugins/datatables-responsive/js/dataTables.responsive.min.js?v=0.0.1"></script>
+  <script src="%PUBLIC_URL%/plugins/datatables-responsive/js/responsive.bootstrap4.min.js?v=0.0.1"></script>
+  <script src="%PUBLIC_URL%/plugins/datatables-buttons/js/dataTables.buttons.min.js?v=0.0.1"></script>
+  <script src="%PUBLIC_URL%/plugins/datatables-buttons/js/buttons.bootstrap4.min.js?v=0.0.1"></script>
+  <script src="%PUBLIC_URL%/plugins/jszip/jszip.min.js?v=0.0.1"></script>
+  <script src="%PUBLIC_URL%/plugins/pdfmake/pdfmake.min.js?v=0.0.1"></script>
+  <script src="%PUBLIC_URL%/plugins/pdfmake/vfs_fonts.js?v=0.0.1"></script>
+  <script src="%PUBLIC_URL%/plugins/datatables-buttons/js/buttons.html5.min.js?v=0.0.1"></script>
+  <script src="%PUBLIC_URL%/plugins/datatables-buttons/js/buttons.print.min.js?v=0.0.1"></script>
+  <script src="%PUBLIC_URL%/plugins/datatables-buttons/js/buttons.colVis.min.js?v=0.0.1"></script>
+  <!-- ChartJS -->
+  <script src="%PUBLIC_URL%/plugins/chart.js/Chart.min.js?v=0.0.1"></script>
+  <!-- Sparkline -->
+
+  <!-- daterangepicker -->
+  <script src="%PUBLIC_URL%/plugins/moment/moment.min.js?v=0.0.1"></script>
+  <script src="%PUBLIC_URL%/plugins/inputmask/jquery.inputmask.min.js?v=0.0.1"></script>
+  <script src="%PUBLIC_URL%/plugins/daterangepicker/daterangepicker.js?v=0.0.1"></script>
+  <!-- Tempus Dominus Bootstrap 4 -->
+  <script src="%PUBLIC_URL%/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.js?v=0.0.1"></script>
+  <!-- Summernote -->
+  <script src="%PUBLIC_URL%/plugins/summernote/summernote-bs4.min.js?v=0.0.1"></script>
+  <!-- overlay Scrollbars -->
+  <script src="%PUBLIC_URL%/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js?v=0.0.1"></script>
+  <!-- AdminLTE App -->
+  <script src="%PUBLIC_URL%/dist/js/adminlte.js?v=0.0.1"></script>
+  <!-- Summernote -->
+  <script src="%PUBLIC_URL%/plugins/summernote/summernote-bs4.min.js?v=0.0.1"></script>
+  <!-- Quill JS -->
+  <!-- Bootstrap 5 JS Bundle (includes Popper.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js?v=0.0.1"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <style>
+    .confirmCommonModal .modal-confirm {
+      color: #636363;
+      width: 325px;
+      font-size: 14px;
+    }
+
+    .confirmCommonModal .modal-confirm .modal-content {
+      padding: 20px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .confirmCommonModal .modal-confirm .modal-header {
+      border-bottom: none;
+      position: relative;
+    }
+
+    .confirmCommonModal .modal-confirm h5 {
+      text-align: center;
+      font-size: 26px;
+      margin: 30px 0 -15px;
+    }
+
+    .confirmCommonModal .modal-confirm .modal-footer {
+      border: none;
+      text-align: center;
+      border-radius: 5px;
+      font-size: 13px;
+      display: inline-block;
+    }
+
+    .confirmCommonModal .modal-confirm .icon-box {
+      color: #fff;
+      position: absolute;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      top: -70px;
+      width: 95px;
+      height: 95px;
+      border-radius: 50%;
+      z-index: 9;
+      background: #ef9c53;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .confirmCommonModal .modal-confirm .icon-box i {
+      font-size: 40px;
+      position: relative;
+      bottom: -10px;
+    }
+
+    .confirmCommonModal .modal-confirm.modal-dialog {
+      margin-top: 80px;
+    }
+
+    .bg-1st-Tiles {
+      background-color: #17a2b8;
+    }
+
+    .bg-2nd-Tiles {
+      background-color: #ffc107;
+    }
+
+    .bg-3rd-Tiles {
+      background-color: #28a745;
+    }
+
+    .bg-4th-Tiles {
+      background-color: #6f42c1;
+    }
+
+    .bg-5th-Tiles {
+      background-color: #44c696;
+    }
+
+    .bg-6th-Tiles {
+      background-color: #ed5d32;
+    }
+
+    .in-progress {
+      box-shadow: 0px 0px 4px 5px #b9d7db;
+      background: linear-gradient(45deg, #f9feff, #2e666e) !important;
+    }
+
+    .customer-action {
+      box-shadow: 0px 0px 4px 5px #e6dbad;
+      background: linear-gradient(45deg, rgb(255 255 255), rgb(255 193 7)) !important;
+    }
+
+    .completed {
+      box-shadow: 0px 0px 4px 5px #c0dec7;
+      background: linear-gradient(45deg, rgb(236 245 238), rgb(30 168 61)) !important;
+    }
+
+    .go-live-support {
+      box-shadow: 0px 0px 4px 5px #7b09e07d;
+      background: linear-gradient(45deg, #f9feff, #770dc8) !important;
+    }
+
+    .ams-support {
+      box-shadow: 0px 0px 4px 5px #289f7391;
+      background: linear-gradient(45deg, rgb(255 255 255), #289f73) !important;
+    }
+
+    .counsulting {
+      box-shadow: 0px 0px 4px 5px #e5461782;
+      background: linear-gradient(45deg, #f9feff, #e54617) !important;
+    }
+
+    .activeTilesTotal {
+      box-shadow: 0px 0px 4px 5px #b9d7db;
+      background: linear-gradient(45deg, #f9feff, #2e666e) !important;
+    }
+
+    .activeTilesOpen {
+      box-shadow: 0px 0px 4px 5px #e6dbad;
+      background: linear-gradient(45deg, rgb(255 255 255), rgb(255 193 7)) !important;
+    }
+
+    .activeTilesCompleted {
+      box-shadow: 0px 0px 4px 5px #c0dec7;
+      background: linear-gradient(45deg, rgb(236 245 238), rgb(30 168 61)) !important;
+    }
+
+    .activeTilesDelay {
+      box-shadow: 0px 0px 4px 5px #e5461782;
+      background: linear-gradient(45deg, #f9feff, #e54617) !important;
+    }
+
+    .commonTielsClass {
+      background: linear-gradient(45deg, rgb(255 255 255), rgb(146 146 146));
+    }
+
+
+    .profile-pic {
+      color: transparent;
+      transition: all 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .profile-pic input {
+      display: none;
+    }
+
+    .profile-pic img {
+      position: absolute;
+      object-fit: cover;
+      width: 165px;
+      height: 165px;
+      box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.35);
+      border-radius: 100px;
+      z-index: 0;
+    }
+
+    .profile-pic .-label {
+      cursor: pointer;
+      height: 165px;
+      width: 165px;
+    }
+
+    .profile-pic:hover .-label {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 10000;
+      color: #fafafa;
+      transition: background-color 0.2s ease-in-out;
+      border-radius: 100px;
+      margin-bottom: 0;
+    }
+
+    .profile-pic span {
+      display: inline-flex;
+      padding: 0.2em;
+      height: 2em;
+    }
+
+
+    .field-icon-password {
+      float: right;
+      margin-right: 5px;
+      margin-top: -22px;
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+  <script>
+    let select2Values = [];
+    $(document).on("change keyup paste ", "input,textarea,select", function () {
+      if ($(this).hasClass('is-invalid')) {
+        $(this).removeClass('is-invalid')
+      }
+    });
+
+
+    $(document).on("change", ".select2", function () {
+      select2Values = $(this).val();
+    });
+
+    function getSelect2Values() {
+      return select2Values;
+    }
+
+    function initSummernoteFuncation() {
+      $(document).ready(function () {
+        setTimeout(() => {
+          $('#summernote').summernote({ height: 200, focus: true })
+        }, 1000);
+      })
+    }
+
+    function initMultiSelectFuncation() {
+      $(document).ready(function () {
+        setTimeout(() => {
+          $('.select2').select2();
+        }, 1000);
+      })
+    }
+
+    function confirmModalProjectTaskShow() {
+      $("#confirmCommonProjectTaskModal").modal("show");
+    }
+    function confirmModalProjectTaskHide() {
+      $("#confirmCommonProjectTaskModal").modal("hide");
+    }
+
+    function initDataTableFuncationTaskList() {
+      $(document).ready(function () {
+        if ($.fn.dataTable.isDataTable("#example2")) {
+          // If the table is already initialized, don't reinitialize
+        } else {
+          $("#example2").DataTable({
+            "lengthChange": false,
+            "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
+            "columnDefs": [
+              { "orderable": false, "targets": [0, 1] } // Disable sorting for SR. NO (0) and Checkbox (1)
+            ]
+          }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
+        }
+      });
+    }
+
+    function initDestroyDataTableFuncationTaskList() {
+      $(document).ready(function () {
+        if ($.fn.dataTable.isDataTable("#example2")) {
+          var table = $('#example2').DataTable();
+          table.destroy();
+        }
+      });
+    }
+
+    function getSummerNoteValueFuncation() {
+      return $('#summernote').summernote('code');
+    }
+
+    function getClearSummerNoteValueFuncation() {
+      $('#summernote').summernote('reset');
+    }
+
+    function setSummerNoteValueFuncation(getTest) {
+      $('#summernote').summernote("code", getTest);
+    }
+
+
+
+    function assignValueToSelect2(getArrayValues) {
+      $(".select2").val(getArrayValues).change();
+      select2Values = getArrayValues;
+    }
+
+    function changeTilesClass(getStatus) {
+      $(".commonTielsClass").removeClass('activeTilesTotal');
+      $(".commonTielsClass").removeClass('activeTilesOpen');
+      $(".commonTielsClass").removeClass('activeTilesCompleted');
+      $(".commonTielsClass").removeClass('customer-action');
+      $(".commonTielsClass").removeClass('completed');
+      $(".commonTielsClass").removeClass('go-live-support');
+      $(".commonTielsClass").removeClass('ams-support');
+      $(".commonTielsClass").removeClass('counsulting');
+      $(".commonTielsClass").removeClass('in-progress');
+      $(".commonTielsClass").removeClass('activeTilesDelay');
+      if (getStatus == 'In-Progress') {
+        $("#in-progress").addClass('in-progress');
+      } else if (getStatus == 'Customer Action') {
+        $("#customer-action").addClass('customer-action');
+      } else if (getStatus == 'Completed') {
+        $("#completed").addClass('completed');
+      } else if (getStatus == 'Go Live Support') {
+        $("#go-live-support").addClass('go-live-support');
+      } else if (getStatus == 'AMS Support') {
+        $("#ams-support").addClass('ams-support');
+      } else if (getStatus == 'Consulting') {
+        $("#counsulting").addClass('counsulting');
+      } else if (getStatus == 'total') {
+        $("#totalTiles").addClass('activeTilesTotal');
+      } else if (getStatus == 'open') {
+        $("#openTiles").addClass('activeTilesOpen');
+      } else if (getStatus == 'delay') {
+        $("#delayedTiles").addClass('activeTilesDelay');
+      } else {
+        $("#completedTiles").addClass('activeTilesCompleted');
+      }
+    }
+
+    function initDatePickerFuncationForTaskAnalysis() {
+      $("#projectStartDate").datetimepicker({
+        format: "YYYY-MM-DD",
+      });
+      $("#projectEndDate").datetimepicker({
+        format: "YYYY-MM-DD",
+      });
+    }
+
+    function initDatePickerFuncation() {
+      $(document).ready(function () {
+        setTimeout(() => {
+          $("#projectStartDate").datetimepicker({
+            format: "DD-MM-YYYY",
+          });
+          $("#projectEndDate").datetimepicker({
+            format: "DD-MM-YYYY",
+          });
+          $("#projectKickOffDate").datetimepicker({
+            format: "DD-MM-YYYY",
+          });
+          $("#inputDateOfBirthV").datetimepicker({
+            format: "DD-MM-YYYY",
+          });
+          $("#joiningDateV").datetimepicker({
+            format: "DD-MM-YYYY",
+          });
+
+          $("#projectStartDateV").datetimepicker({
+            format: "DD-MM-YYYY",
+          });
+
+
+          if ($.fn.dataTable.isDataTable("#example1")) {
+            // variable "table" is a valid initialized DataTable ... do datatable stuff
+          } else {
+            $("#example1")
+              .DataTable({
+                // responsive: true,
+                lengthChange: false,
+                autoWidth: false,
+                buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+              })
+              .buttons()
+              .container()
+              .appendTo("#example1_wrapper .col-md-6:eq(0)");
+          }
+        }, 2000);
+      });
+    }
+
+
+    $(document).on("click", ".toggle-password", function () {
+      $(this).toggleClass("fa-eye fa-eye-slash");
+      var input = $($(this).attr("toggle"));
+      if (input.attr("type") == "password") {
+        input.attr("type", "text");
+      } else {
+        input.attr("type", "password");
+      }
+    });
+    // })
+
+
+    function initDateTimePickerFuncation() {
+      $(document).ready(function () {
+        $("#projectStartDate, #projectEndDate").on("blur", function (e) { $(this).datetimepicker("hide"); });
+
+        setTimeout(() => {
+          $('#projectStartDate').datetimepicker({
+            icons: { time: 'far fa-clock' },
+            format: 'DD/MM/YYYY hh:mm A',
+            autoclose: true,
+            keepOpen: false
+          });
+          $('#projectEndDate').datetimepicker({
+            icons: { time: 'far fa-clock' },
+            format: 'DD/MM/YYYY hh:mm A',
+            autoclose: true
+          });
+
+
+
+          if ($.fn.dataTable.isDataTable("#example1")) {
+            // variable "table" is a valid initialized DataTable ... do datatable stuff
+          } else {
+            $("#example1").DataTable({
+              // responsive: {
+              //   details: {
+              //     renderer: DataTable.Responsive.renderer.listHiddenNodes()
+              //   }
+              // }, 
+              "lengthChange": false, "autoWidth": false,
+              "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+          }
+        }, 1500);
+      })
+    }
+
+    function initDestroyDataTableFuncation() {
+      $(document).ready(function () {
+        if ($.fn.dataTable.isDataTable("#example1")) {
+          var table = $('#example1').DataTable();
+          table.destroy();
+        }
+      })
+    }
+
+    function initDestroyDataTableFuncationEmpList() {
+      $(document).ready(function () {
+        if ($.fn.dataTable.isDataTable("#deleyEmp")) {
+          var table1 = $('#deleyEmp').DataTable().destroy();
+          //  table1.destroy();
+        }
+      })
+    }
+    function initDataTableFuncationForEmployeeList() {
+      $(document).ready(function () {
+        if ($.fn.dataTable.isDataTable("#deleyEmp")) {
+          // var table = $('#deleyEmp').DataTable();
+          // table.destroy(true);
+        } else {
+          $("#deleyEmp").DataTable({
+            responsive: {
+              details: {
+                renderer: DataTable.Responsive.renderer.listHiddenNodes()
+              }
+            }, "lengthChange": false, "autoWidth": false, destroy: true,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+          }).buttons().container().appendTo('#deleyEmp_wrapper .col-md-6:eq(0)');
+        }
+      })
+    }
+    function initDestroyDataTableFuncationForManagerList() {
+      $(document).ready(function () {
+        if ($.fn.dataTable.isDataTable("#example1")) {
+          var table4 = $('#example1').DataTable().destroy();
+          // table.destroy();
+        }
+      })
+    }
+
+    function initDataTableFuncation() {
+      $(document).ready(function () {
+        if ($.fn.dataTable.isDataTable("#example1")) {
+          // If the table is already initialized, don't reinitialize
+        } else {
+          $("#example1").DataTable({
+            "lengthChange": false,
+            "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
+            "columnDefs": [
+              { "orderable": false, "targets": [0, 1] } // Disable sorting for SR. NO (0) and Checkbox (1)
+            ]
+          }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        }
+      });
+    }
+
+
+
+    function confirmModalShow() {
+      $("#confirmCommonModal").modal("show");
+    }
+    function confirmModalHide() {
+      $("#confirmCommonModal").modal("hide");
+    }
+    function employeeRemarkModalShow() {
+      $("#employeeRemark").modal('show');
+    }
+
+    function employeeRemarkModalHide() {
+      $("#employeeRemark").modal('hide');
+    }
+
+    function employeeViewRemarkModalShow() {
+      $("#viewEmployeeRemark").modal('show');
+    }
+
+    function employeeViewRemarkModalHide() {
+      $("#viewEmployeeRemark").modal('hide');
+    }
+    function myModalViewRemarkModalShow() {
+      $("#myModal").modal('show');
+    }
+
+    function myModalViewRemarkModalHide() {
+      $("#myModal").modal('hide');
+    }
+    function timelineModalShow() {
+      $("#viewtimeline").modal('show');
+    }
+
+    function timelineModalHide() {
+      $("#viewtimeline").modal('hide');
+    }
+
+    function importExcelContactsShow() {
+      $("#importExcelModal").modal('show');
+    }
+
+    function importExcelContactsHide() {
+      $("#importExcelModal").modal('hide');
+    }
+
+    function createPieGraph(keyLabels, keyValues, colorArray) {
+
+
+      var donutData = {
+        labels: keyLabels,
+        datasets: [
+          {
+            data: keyValues,
+            backgroundColor: colorArray,
+          }
+        ]
+      }
+
+      if (window.myChart && window.myChart !== null) {
+        window.myChart.destroy();
+      }
+
+
+
+      var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+      var pieData = donutData;
+      var pieOptions = {
+        maintainAspectRatio: false,
+        responsive: true,
+      }
+      //Create pie or douhnut chart
+      // You can switch between pie and douhnut using the method below.
+      window.myChart = new Chart(pieChartCanvas, {
+        type: 'pie',
+        data: pieData,
+        options: pieOptions
+      })
+    }
+
+    // (function () {
+
+    function scroller() {
+
+      var scroll = $('div.scroll');// Sets the div with a class of scroll as a variable
+
+      var height = scroll.height(); // Gets the height of the scroll div
+
+      var topAdj = -height - 30; /* '-height' turns the height                   of the UL into a negative #, 
+               * '- 50' subtracts an extra 50 pixels from the height of 
+        			 * the div so that it moves the trail of the UL higher to 
+							 * the top of the div before the animation                ends
+							 */
+
+      scroll.animate({
+        'top': [topAdj, 'linear']
+      }, 33000, function () {
+        scroll.css('top', 80); //resets the top position of the Ul for the next cycle
+        scroller(); // Recalls the animation cycle to begin.
+      });
+    }
+
+    // setTimeout(() => {
+    //   scroller();
+    // }, 1000)
+
+    function initScroller() {
+      scroller();
+    }
+
+    // })();
+  </script>
+</body>
+
+</html>
